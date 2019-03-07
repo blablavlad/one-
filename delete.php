@@ -1,6 +1,10 @@
 <?php 
 	require 'connection_DB.php';
 
-	$title = $_POST['title'];
+	$id = $_POST['delete'];
 
-	$delete = $mysqli->query("DELETE FROM $db_table WHERE `title`= '$title'");
+	$delete = $mysqli->query("DELETE FROM $db_table WHERE `id`= '$id'");
+
+	header('location: index.php');
+	
+	exit;

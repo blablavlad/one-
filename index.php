@@ -12,10 +12,12 @@
 		<p><input type="submit" /></p>
 	</form>
 
- 	<form action="delete.php" method="post">
- 		<p>Название: <input type="text" name="title" /></p>
-		<p><input type="submit" value="Delete" /></p>
-	</form>
+	<hr>
+	<?php
+		$today = date('Y-m-d h:i:s');
+		echo "$today";
+	?>
+	<hr>
 
 	<?php
 		require 'extract_post.php';
