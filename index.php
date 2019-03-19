@@ -31,7 +31,7 @@
 			else {
 				echo '<p>' . array_shift($errors) . '</p><hr>';
 			}
-		// }
+			}
 		// // если ошибок нет
 		// if (empty($errors)) {
 		// 	$registration = $mysqli->query("INSERT INTO $db_table (`name`, `password`) VALUES ('$login', '$password')");
@@ -47,8 +47,8 @@
 	</form> -->
 
 	<form action="index.php" method="post">
-		<p>Введите логин : <input type="text" name="login" value="<?php echo $_POST['login']; ?>"></p>
-		<p>Введите пароль : <input type="password" name="password" value="<?php echo $_POST['password']; ?>"></p>
+		<p>Введите логин : <input type="text" name="login" value="<?php echo @$_POST['login']; ?>"></p>
+		<p>Введите пароль : <input type="password" name="password" value="<?php echo @$_POST['password']; ?>"></p>
 		<p>Повторите введённый пароль : <input type="password" name="password_2"></p>
 		<p><input type="submit" name="do_registration"></p>
 	</form>
