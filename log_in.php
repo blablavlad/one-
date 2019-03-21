@@ -8,15 +8,18 @@
 
 	while ($logg = $log_in->fetch_array()) {
 		if ($log == $logg['name'] && $pas == $logg['password']) {
-			// if ($pas == $logg['password']) {
-			echo '<p>'. $logg['name'] . ', доброго времени суток!';
-			// }
-			// else {
-			// 	echo 'Пароль или логин введен неверно';
-			// }
-			exit;
+			// echo '<p>'. $logg['name'] . ', доброго времени суток!';
+			$login = true; 
+			$name = $logg['name'];
 		}
-		else {
-				echo 'Пароль или логин введен неверно';
-			}
+		// else {
+		// 		echo 'Пароль или логин введен неверно';
+		// 	}
+	}
+
+	if ($login = true) {
+		echo '<p>'. $name . ', доброго времени суток!';
+	}
+	else {
+		echo 'Пароль или логин введен неверно';
 	}
