@@ -15,7 +15,8 @@
 		}
 	}
 
-	if ($login = true) {
+	if (isset($_SESSION['user_name'])) {
+	// if ($login = true) {
 		echo '<p>'. $_SESSION['user_name'] . ', доброго времени суток!';
 	}
 	else {
