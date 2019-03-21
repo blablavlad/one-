@@ -1,4 +1,6 @@
 <?php
+	session_start();
+
 	require 'connection_DB_user.php';
 
 	$log = $_POST['login'];
@@ -8,17 +10,13 @@
 
 	while ($logg = $log_in->fetch_array()) {
 		if ($log == $logg['name'] && $pas == $logg['password']) {
-			// echo '<p>'. $logg['name'] . ', доброго времени суток!';
 			$login = true; 
-			$name = $logg['name'];
+			$_SESSION['user_name'] = $logg['name'];
 		}
-		// else {
-		// 		echo 'Пароль или логин введен неверно';
-		// 	}
 	}
 
 	if ($login = true) {
-		echo '<p>'. $name . ', доброго времени суток!';
+		echo '<p>'. $_SESSION['user_name'] . ', доброго времени суток!';
 	}
 	else {
 		echo 'Пароль или логин введен неверно';

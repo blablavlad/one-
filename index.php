@@ -1,3 +1,8 @@
+<?php 
+	session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +22,7 @@
 	</form>
 
 	<?php
-
 		include 'log_in.php';
-
 	?>
 
 	<form action="index.php" method="post">
@@ -27,6 +30,10 @@
 		<p>Введите пароль : <input type="password" name="password" value="<?php echo @$_POST['password']; ?>"></p>
 		<p>Повторите введённый пароль : <input type="password" name="password_2"></p>
 		<p><input type="submit" name="do_registration"></p>
+	</form>
+
+	<form action="exit.php" method="post">
+		<p><input type="submit" name="exit" value="Выйти"></p>
 	</form>
 
 </body>
