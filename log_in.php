@@ -9,10 +9,7 @@
 		$log_in = $mysqli->query("SELECT `name`, `password` FROM $db_table WHERE `name` = '$log' AND `password` = '$pas'");
 
 		$logg = $log_in->fetch_array();
-		// echo $logg['name'];
-		// echo $logg['password'];
 
-		// var_dump($log_in);
 		if ($log_in->num_rows > 0) {
 			$_SESSION['user_loged_in'] = true;
 			$_SESSION['user_name'] = $logg['name'];
@@ -23,8 +20,13 @@
 	}
 	}
 
+	//если в сессии есть переменная с именем пользователя
+	if (isset($_SESSION['user_name']) && isset($_SESSION['user_loged_in'])) {
+		// setcookie("login", $_SESSION['user_name'], time()+60*60*24*30);
+		echo '<p>'. $_SESSION['user_name'] . ', доброго времени суток!';
+	}
 	// если куки уже были установлены
-	if (isset($_COOKIE['login'])) {
+	elseif (isset($_COOKIE['login'])) {
 		$_SESSION['user_loged_in'] = true;
 		$_SESSION['user_name'] = $_COOKIE['login'];
 		echo '<p>'. $_SESSION['user_name'] . ', доброго времени суток!';
@@ -44,4 +46,7 @@
 		$log = $_POST['login'];
 		$pas = $_POST['password'];
 		login();
+		if (isset($_SESSION['user_loged_in'])) {
+			echo '<p>'. $_SESSION['user_name'] . ', доброго времени суток!';
+		}
 	}

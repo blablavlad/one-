@@ -11,23 +11,14 @@
 </head>
 <body>
 
-	<?php
-		include 'registration.php';
-	?>
-
 	<form action="index.php" method="post">
 		<p>Введите логин : <input type="text" name="login"></p>
 		<p>Введите пароль : <input type="text" name="password"></p>
 		<p><input type="checkbox" name="remember"> Запомнить меня</p>
-		<p><input type="submit"></p> <br><br>
+		<p><input type="submit"></p> <br>
 	</form>
 
-	<form action="index.php" method="post">
-		<p>Введите логин : <input type="text" name="login" value="<?php echo @$_POST['login']; ?>"></p>
-		<p>Введите пароль : <input type="password" name="password" value="<?php echo @$_POST['password']; ?>"></p>
-		<p>Повторите введённый пароль : <input type="password" name="password_2"></p>
-		<p><input type="submit" name="do_registration"></p>
-	</form>
+	<p><a href="registration_page.php">Зарегистрироваться</a></p>
 
 	<form action="exit.php" method="post">
 		<p><input type="submit" name="exit" value="Выйти"></p>

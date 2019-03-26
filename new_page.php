@@ -12,7 +12,10 @@
 
 	<?php
 	if (isset($_SESSION['user_loged_in'])) {
-		echo '<p>'. $_SESSION['user_name'] . ' , доброго времени суток';
+		echo '<p>'. $_SESSION['user_name'] . ' , доброго времени суток<p> <p><a href="index.php">вернуться назад</a></p>';
+	}
+	else {
+		echo '<p>Вы не вошли<br><a href="index.php">Войти</a></p>';
 	}
 
 	?>
