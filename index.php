@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-			include 'log_in.php';
+	include 'log_in.php';
 
 ?>
 <!DOCTYPE html>
@@ -21,10 +21,6 @@
 		<p><input type="checkbox" name="remember"> Запомнить меня</p>
 		<p><input type="submit"></p> <br><br>
 	</form>
-
-	<?php
-		// include 'log_in.php';
-	?>
 
 	<form action="index.php" method="post">
 		<p>Введите логин : <input type="text" name="login" value="<?php echo @$_POST['login']; ?>"></p>
