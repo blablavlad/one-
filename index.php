@@ -1,6 +1,7 @@
 <?php 
 	session_start();
 	include 'log_in.php';
+	include 'create_post.php';
 
 ?>
 <!DOCTYPE html>
@@ -27,11 +28,19 @@
 
 	<a href="new_page.php">тестовая страница</a>
 	<!-- создание поста -->
-	<form action="create_post.php" method="post">
+	<form action="index.php" method="post">
 		<p>Введите название: <input type="text" name="title"></p>
 		<p>Введите текст: <input type="text" name="text"></p>
-		<p><input type="submit" /></p>
+		<p><input type="submit" name="create_post" /></p>
 	</form>
+
+ 	<?php
+ 		if (!empty($create_post_error)) {
+			echo '<p>'. $create_post_error['0'] .'</p>'. '<p>'. $create_post_error['1'] .'</p>';
+ 		}
+	?>
+
+	<br><br><br>
 
 	<?php
 		require 'extract.php';
