@@ -3,8 +3,7 @@
 
 	require 'connection_DB_user.php';
 
-	function login() {
-		global $log, $pas, $db_table, $mysqli;
+	function login($log, $pas, $db_table, $mysqli) {
 
 		$log_in = $mysqli->query("SELECT `name`, `password` FROM $db_table WHERE `name` = '$log' AND `password` = '$pas'");
 
@@ -23,30 +22,36 @@
 	//если в сессии есть переменная с именем пользователя
 	if (isset($_SESSION['user_name']) && isset($_SESSION['user_loged_in'])) {
 		// setcookie("login", $_SESSION['user_name'], time()+60*60*24*30);
-		echo '<p>'. $_SESSION['user_name'] . ', доброго времени суток!';
+		echo '<p>'. htmlspecialchars($_SESSION['user_name']) . ', доброго времени суток!';
 	}
 	// если куки уже были установлены
 	elseif (isset($_COOKIE['login'])) {
 		$_SESSION['user_loged_in'] = true;
 		$_SESSION['user_name'] = $_COOKIE['login'];
-		echo '<p>'. $_SESSION['user_name'] . ', доброго времени суток!';
+		echo '<p>'. htmlspecialchars($_SESSION['user_name']) . ', доброго времени суток!';
 	}
 	// если включена запомнить меня
 	elseif (isset($_POST['remember'])) {
 		$log = $_POST['login'];
 		$pas = $_POST['password'];
-		login();
+		login($log, $pas, $db_table, $mysqli);
 		if (isset($_SESSION['user_loged_in'])) {
 			setcookie("login", $_POST['login'], time()+60*60*24*30);
-			echo '<p>'. $_SESSION['user_name'] . ', доброго времени суток!';
+			echo '<p>'. htmlspecialchars($_SESSION['user_name']) . ', доброго времени суток!';
 		}
 	}
 	// если не включена
 	else {
 		$log = $_POST['login'];
 		$pas = $_POST['password'];
-		login();
+		login($log, $pas, $db_table, $mysqli);
 		if (isset($_SESSION['user_loged_in'])) {
-			echo '<p>'. $_SESSION['user_name'] . ', доброго времени суток!';
+			echo '<p>'. htmlspecialchars($_SESSION['user_name']) . ', доброго времени суток!';
 		}
+	}
+
+	if (isset($_POST['log_in'])) {
+		header ('location: index.php');
+
+		exit;
 	}

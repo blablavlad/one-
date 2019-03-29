@@ -6,9 +6,6 @@
 
 	if (isset($_POST['create_post'])) {
 
-		if (empty($_SESSION['user_name']) && empty($_SESSION['user_loged_in'])) {
-			$create_post_error [] = 'Вы не вошли, для создания поста необходимо залогиниться!';
-		}
 		if (empty($_POST['title'])) {
 			$create_post_error [] = 'Вы не ввели название!';
 		}
@@ -24,12 +21,8 @@
 
 			$result = $mysqli->query("INSERT INTO $db_table (`user`, `title`, `text`, `date`) VALUES ('$user', '$title', '$text', '$date')");
 
-			unset($_POST['title']);
-			unset($_POST['text']);
+			header ('location: index.php');
+
+			exit;
 		}
 	}
-
-	// header ('location: index.php');
-
-	// exit;
-	//при обновлении страницы с пустыми полями создаёт в базе данных пост аналогичный предыдущему

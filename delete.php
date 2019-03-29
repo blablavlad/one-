@@ -13,8 +13,6 @@
 		$delete = $mysqli->query("DELETE FROM $db_table WHERE `id`= '$id'");
 	}
 
-	// $delete = $mysqli->query("DELETE FROM $db_table WHERE `id`= '$id'");
-
 	header ('location: index.php');
 
 	exit;
