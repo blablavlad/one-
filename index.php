@@ -1,16 +1,18 @@
 <?php 
-
+	// сделать навигацию
 	session_start();
 
 	include 'create_post.php';
 
+	echo '<link rel="stylesheet" type="text/css" href="style.css">';
+
 	if (isset($_SESSION['user_name']) && isset($_SESSION['user_loged_in'])) {
-		echo '<p>'. htmlspecialchars($_SESSION['user_name']) . ', доброго времени суток! <br>';
+		echo '<div class="header"><p>'. htmlspecialchars($_SESSION['user_name']) . ', доброго времени суток! </p></div>';
 	}
 	else {
-		echo '<br>';
-		echo 'Пароль или логин введен неверно <br>';
+		echo '<div class="header"><p>Пароль или логин введен неверно </p></div>';
 	}
+	// echo '<link rel="stylesheet" type="text/css" href="style.css">';
 
 ?>
 <!DOCTYPE html>
@@ -20,11 +22,11 @@
 	<title>Мой сайт</title>
 </head>
 <body>
-
+	<!-- <div class="content"> -->
 	<!-- войти -->
 	<?php
 		if (!isset($_SESSION['user_name']) && !isset($_SESSION['user_loged_in'])) {
-			echo '<a href="log_in_page.php">Войти</a>';
+			echo '<div class"header"><p><a href="log_in_page.php">Войти</a></p></div>';
 		}
 	?>
 
@@ -66,5 +68,6 @@
 		require 'extract.php';
 	?>
 
+	<!-- </div> -->
 </body>
 </html>

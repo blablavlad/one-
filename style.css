@@ -1,0 +1,27 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	height: 100px;
+/*	width: 100px;*/
+	background-color: #B0E0E6;
+	text-align: center;
+}
+
+.content {
+	position: center;
+	height: auto;
+	width: auto;
+	background-color: #B0E0E6;
+	text-align: center;
+	border: 1px solid #999;
+	font-size: 12pt;
+}
+
+#footer {
+	height: 200px;
+	text-align: center;
+	font-size: 14pt;
+}
