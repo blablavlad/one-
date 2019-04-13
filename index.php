@@ -2,9 +2,11 @@
 	// сделать навигацию
 	session_start();
 
-	include 'create_post.php';
+	include 'D:\OpenServer\OSPanel\domains\mysite.loc\post\create_post.php';
 
-	echo '<link rel="stylesheet" type="text/css" href="style.css">';
+	echo '<link rel="stylesheet" type="text/css" href="../style_css/style.css">';
+
+	// require __DIR__ . '/style_css/style.css';
 
 	if (isset($_SESSION['user_name']) && isset($_SESSION['user_loged_in'])) {
 		echo '<div class="header"><p>'. htmlspecialchars($_SESSION['user_name']) . ', доброго времени суток! </p></div>';
@@ -40,7 +42,7 @@
 	<!-- Выход -->
 	<?php
 		if (isset($_SESSION['user_name']) && isset($_SESSION['user_loged_in'])) {
-			echo '<form action="exit.php" method="post">
+			echo '<form action="user/exit.php" method="post">
 			<p><input type="submit" name="exit" value="Выйти"></p>
 			</form>';
 		}
@@ -65,7 +67,7 @@
 	<br><br><br>
 
 	<?php
-		require 'extract.php';
+		require 'post/extract.php';
 	?>
 
 	<!-- </div> -->

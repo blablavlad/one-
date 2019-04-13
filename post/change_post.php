@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	require 'connection_DB.php';
+	require 'D:\OpenServer\OSPanel\domains\mysite.loc\data_base\connection_DB.php';
 
 	$id = $_GET['id'];
 
@@ -27,7 +27,6 @@
 		$make_change = $mysqli->query("UPDATE $db_table SET `title` = '$title_change', `text` = '$text_change' WHERE `id` = '$id'");
 
 		header ('location: view_post.php?id=' . $id . '');
-
 		exit;
 	}
 

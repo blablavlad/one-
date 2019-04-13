@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	require 'connection_DB.php';
+	require 'data_base/connection_DB.php';
 
 	$extract = $mysqli->query("SELECT `user`, `title`, `text`, `date`, `id` FROM $db_table");
 
@@ -10,7 +10,7 @@
 		$a = htmlspecialchars($post['title']);
 		$b = htmlspecialchars($post['text']);
 
-		echo '<div class="content"><button><a href="view_post.php?id=' . $post['id'] . '">Промотр поста</a></button>';;
+		echo '<div class="content"><button><a href="post/view_post.php?id=' . $post['id'] . '">Промотр поста</a></button>';;
 
 		echo '<p> Создатель поста: '. $post['user'] .'</p>'.'<p>'. $a .'<br>'. $b .'<br>'. $post['date'] .'</p></div>';
 	}

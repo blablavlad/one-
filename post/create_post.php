@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require 'connection_DB.php';
+	require 'data_base/connection_DB.php';
 
 	$create_post_error = array ();
 

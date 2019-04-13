@@ -7,7 +7,7 @@
 <body>
 
 	<?php
-		include 'registration.php';
+		include 'user/registration.php';
 	?>
 
 	<form action="registration_page.php" method="post">

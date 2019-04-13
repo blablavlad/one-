@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	require 'connection_DB.php';
+	require 'D:\OpenServer\OSPanel\domains\mysite.loc\data_base\connection_DB.php';
 
 	$id = $_GET['id'];
 
@@ -35,7 +35,7 @@
 
 	echo '<p> Создатель поста: '. $extr_post['user'] .'</p>'.'<p>'. $a .'<br>'. $b .'<br>'. $extr_post['date'] .'</p><hr>';
 
-	echo '<a href="index.php">Вернуться на главную</a>';
+	echo '<a href="../index.php">Вернуться на главную</a>';
 
 	var_dump($extr_post);
 

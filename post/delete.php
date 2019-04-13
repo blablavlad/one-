@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	require 'connection_DB.php';
+	require 'D:\OpenServer\OSPanel\domains\mysite.loc\data_base\connection_DB.php';
 
 	$id = $_POST['delete'];
 
@@ -13,6 +13,6 @@
 		$delete = $mysqli->query("DELETE FROM $db_table WHERE `id`= '$id'");
 	}
 
-	header ('location: index.php');
+	header ('location: D:/OpenServer/OSPanel/domains/mysite.loc/index.php');
 
 	exit;

@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	include 'log_in.php';
+	include 'user/log_in.php';
 ?>
 
 <!DOCTYPE html>

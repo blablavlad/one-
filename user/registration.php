@@ -1,5 +1,5 @@
 <?php
-	require 'connection_DB_user.php';
+	require 'data_base/connection_DB_user.php';
 
 	var_dump($_POST);
 
