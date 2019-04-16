@@ -51,7 +51,7 @@
 	}
 
 	if (isset($_POST['log_in'])) {
-		header ('location: index.php');
+		header ('location: http://mysite.loc/index.php');
 
 		exit;
 	}

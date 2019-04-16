@@ -5,6 +5,7 @@
 	include 'D:\OpenServer\OSPanel\domains\mysite.loc\post\create_post.php';
 
 	echo '<link rel="stylesheet" type="text/css" href="../style_css/style.css">';
+	// echo '<link rel="stylesheet" type="text/css" href="' . __DIR__ . '/style_css/style.css">'; //не работает 
 
 	// require __DIR__ . '/style_css/style.css';
 

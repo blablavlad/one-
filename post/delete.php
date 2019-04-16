@@ -13,6 +13,6 @@
 		$delete = $mysqli->query("DELETE FROM $db_table WHERE `id`= '$id'");
 	}
 
-	header ('location: D:/OpenServer/OSPanel/domains/mysite.loc/index.php');
+	header ('location: http://mysite.loc/index.php');
 
 	exit;

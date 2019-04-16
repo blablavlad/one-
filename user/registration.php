@@ -19,6 +19,7 @@
 			$login = $_POST['login'];
 			$password = $_POST['password'];
 			$registration = $mysqli->query("INSERT INTO $db_table (`name`, `password`) VALUES ('$login', '$password')");
+			header ('location: http://mysite.loc/index.php');
 		}
 		else {
 			echo '<p>' . array_shift($errors) . '</p><hr>';

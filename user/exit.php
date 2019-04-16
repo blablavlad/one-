@@ -5,6 +5,6 @@
 
 	setcookie("login", '', time()-3600);
 
-	header('location: index.php');
+	header('location: http://mysite.loc/index.php');
 
 	exit();
