@@ -127,6 +127,33 @@ input
 	font-size: 14px;
 }
 
+.container_1 {
+	width: 450px;
+	height: 380px;
+	background-color: blue;
+	margin: 80px auto 0 auto;
+	text-align: center;
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+.on_main_page {
+	top: 20px;
+	left: 20px;
+	position: absolute;
+	height: 21px;
+	width: auto;
+	padding: 13px 30px;
+	margin: 5px 0 20px 0;
+	font-size: 15px;
+	color: black;
+	background-color: #2ca8c6;
+	border: none;
+	border-radius: 5px;
+	font-size: 18px;
+	text-decoration: none;
+}
+
 .container {
 	width: 450px;
 	height: 300px;
@@ -167,8 +194,75 @@ input
 	margin-top: 10px;
 }
 
-input[type="submit"] {
+.log_in_error {
+	position: relative;
+	text-align: center;
+	top: 420px;
+	margin: 0 0 0 0;
+	font-size: 18px;
+}
 
+/*страница просмотра и редактирования постов*/
+.on_main_page2 {
+	top: 20px;
+	right: 20px;
+	position: absolute;
+	height: auto;
+	width: auto;
+	padding: 13px 30px;
+	font-size: 15px;
+	color: black;
+	background-color: #2ca8c6;
+	border: none;
+	border-radius: 5px;
+	font-size: 18px;
+	color: black;
+	text-decoration: none;
+}
+
+.view_text1 {
+	position: relative;
+	/*text-align: left;*/
+	left: 30px;
+	top: 30px;
+	margin: 0 0 0 0;
+	font-size: 18px;
+}
+
+.view_text2 {
+	position: relative;
+	text-align: center;
+	top: 70px;
+	margin: 20px 0 0 0;
+	font-size: 18px;
+}
+
+.view_div1 {
+	position: relative;
+	text-align: center;
+	top: 70px;
+	margin: 20px 0 0 0;
+	font-size: 18px;
+}
+
+.view_div2 {
+	position: relative;
+	text-align: center;
+	top: 70px;
+	margin: 20px 0 0 0;
+	font-size: 18px;
+}
+
+.view_button {
+	padding: 10px 15px;
+	margin: 5px 0 20px 0;
+	font-size: 15px;
+	color: black;
+	background-color: #2ca8c6;
+	border: none;
+	border-radius: 5px;
+	font-size: 14px;
+	text-decoration: none;
 }
 
 #footer {

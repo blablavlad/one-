@@ -14,8 +14,7 @@
 			$_SESSION['user_name'] = $logg['name'];
 		}
 		else {
-			echo '<br>';
-			echo 'Пароль или логин введен неверно';
+			echo '<p class="log_in_error">Пароль или логин введен неверно</p>';
 	}
 	}
 
