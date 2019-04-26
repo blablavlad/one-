@@ -70,6 +70,9 @@
 
 	<!-- </div> -->
 </body>
+<footer>
+	Copyright by Владислав Алексеевич
+</footer>
 </html>
 
 <!-- <p><textarea name="text"></textarea></p>
